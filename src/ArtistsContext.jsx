@@ -19,9 +19,7 @@ export function ArtistsProvider({ children }) {
     async function fetchArtists() {
       try {
         const querySnapshot = await getDocs(collection(db, 'artists'));
-        const artistList = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-        }));
+        const artistList = querySnapshot.docs.map((doc) => doc.data());
         setArtists(artistList);
         setLoading(false);
       } catch (error) {

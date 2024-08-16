@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import PropTypes from 'prop-types';
-import { db } from './firebase';
+import db from './firebase';
 
 const ArtistsContext = createContext();
 

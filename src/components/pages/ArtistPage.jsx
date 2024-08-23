@@ -18,7 +18,7 @@ function ArtistPage() {
   }
 
   return (
-    <section className="flex flex-col justify-between lg:h-screen lg:py-6">
+    <section className="flex flex-col justify-between lg:my-6">
       <div className="flex p-5 justify-center items-center gap-8">
         <h2 className="text-3xl my-4 font-bold">
           {name}
@@ -34,20 +34,18 @@ function ArtistPage() {
         </div>
         )}
       </div>
-      <div className="flex flex-col w-[70%] justify-center items-center mx-auto">
+      <div className="flex flex-col w-[85%] lg:w-[70%] justify-center items-center mx-auto my-2 gap-6">
         <img
-          className="w-[50%] object-contain my-8 rounded-md hover:scale-110 hover: transition-all ease-in-out"
+          className="w-[90%] lg:w-[50%] object-contain my-8 rounded-md hover:scale-110 hover: transition-all ease-in-out"
           src={image}
           alt={name}
         />
-        <div className="justify-between items-center mb-6 p-4 rounded">
-          <h3 className="text-lg text-pretty tracking-wide leading-relaxed">
-            {bio}
-          </h3>
-        </div>
+        <h3 className="lg:text-lg text-pretty tracking-wide leading-relaxed">
+          {bio}
+        </h3>
       </div>
       {/* Buttons */}
-      <div className="flex justify-between mb-10">
+      <div className="flex justify-between mt-12">
         <a
           type="button"
           href="/"

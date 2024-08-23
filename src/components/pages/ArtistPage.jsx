@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { SocialIcon } from 'react-social-icons';
 import { useArtists } from '../../ArtistsContext';
 
 function ArtistPage() {
@@ -18,30 +19,33 @@ function ArtistPage() {
 
   return (
     <section className="flex flex-col justify-between lg:h-screen lg:py-6">
-      <div className="flex p-5 justify-center">
+      <div className="flex p-5 justify-center items-center gap-8">
         <h2 className="text-3xl my-4 font-bold">
           {name}
         </h2>
-      </div>
-      <div className="md:w-[70%] md:mx-auto lg:flex lg:w-[90%]">
-        <div className="w-full p-6 flex justify-center">
-          <img
-            className="flex justify-center object-contain rounded-lg w-[80%]"
-            src={image}
-            alt={name}
-          />
+        {igURL && (
+        <div
+          href={igURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <SocialIcon url={igURL} style={{ height: 35, width: 35 }} bgColor="#0025db" />
         </div>
-        <div className="p-8">
-          <div className="justify-between items-center mb-6 p-4 rounded">
-            <h3 className="text-lg font-bold">
-              {bio}
-            </h3>
-          </div>
+        )}
+      </div>
+      <div className="flex flex-col w-[70%] justify-center items-center mx-auto">
+        <img
+          className="w-[50%] object-contain my-8 rounded-md hover:scale-110 hover: transition-all ease-in-out"
+          src={image}
+          alt={name}
+        />
+        <div className="justify-between items-center mb-6 p-4 rounded">
+          <h3 className="text-lg text-pretty tracking-wide leading-relaxed">
+            {bio}
+          </h3>
         </div>
       </div>
-      <a href={igURL} target="_blank" rel="noopener noreferrer">
-        Instagram
-      </a>
       {/* Buttons */}
       <div className="flex justify-between mb-10">
         <a

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons/component';
-import 'react-social-icons/instagram';
+import { SocialIcon } from 'react-social-icons';
 import { useArtists } from '../../ArtistsContext';
 
 const Home = () => {
@@ -48,14 +47,14 @@ const Home = () => {
                     {name}
                   </h3>
                   {igURL && (
-                  <a
+                  <div
                     href={igURL}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                   >
                     <SocialIcon url={igURL} style={{ height: 35, width: 35 }} bgColor="#0025db" />
-                  </a>
+                  </div>
                   )}
                 </div>
                 <img

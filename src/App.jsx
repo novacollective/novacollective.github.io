@@ -4,7 +4,7 @@ import {
 import Layout from './components/Layout';
 import Home from './components/pages/Home';
 import ArtistPage from './components/pages/ArtistPage';
-import { ArtistsProvider } from './ArtistsContext';
+import { ArtistsProvider } from './DatabaseContext';
 
 const App = () => (
   <>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
-import { useArtists } from '../../ArtistsContext';
+import { useArtists } from '../../DatabaseContext';
+import currentPoster from '../../assets/galway-reinterpret.jpg';
 
 const Home = () => {
   const { artists } = useArtists();
@@ -22,7 +23,13 @@ const Home = () => {
         Current Exhibition
       </h2>
 
-      <p className="text-gray-700 my-6">********************</p>
+      <img
+        src={currentPoster}
+        alt="Current Exhibition"
+        className="w-[80%] lg:w-[25%] object-contain my-8 rounded-md hover:scale-125 hover: transition-all ease-in-out"
+      />
+
+      <p className="text-gray-700 my-4">****************************</p>
 
       <h2 className="text-center text-2xl lg:text-3xl text-[#0f99ff]">Artists</h2>
 
@@ -40,7 +47,7 @@ const Home = () => {
           && currentItems.map(({
             id, name, image, igURL,
           }) => (
-            <div key={id} className="max-w-md mx-auto lg:col-span-3 p-12 lg:p-4">
+            <div key={id} className="max-w-md mx-auto lg:col-span-3 px-12 py-4 lg:p-4">
               <div className="flex justify-around">
                 <Link to={`/artists/${id}`} className="block">
                   <h3 className="text-center text-xl font-bold">

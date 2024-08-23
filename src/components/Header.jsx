@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import novaLogo from '../assets/nova-logo-1.png';
-import { useArtists } from '../ArtistsContext';
+import { useArtists } from '../DatabaseContext';
 
 const Header = () => {
   const { artists } = useArtists();

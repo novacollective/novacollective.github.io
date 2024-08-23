@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
-import { useArtists } from '../../ArtistsContext';
+import { useArtists } from '../../DatabaseContext';
 
 function ArtistPage() {
   const { id } = useParams();

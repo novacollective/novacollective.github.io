@@ -24,14 +24,14 @@ function ArtistPage() {
           {name}
         </h2>
         {igURL && (
-        <div
-          href={igURL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <SocialIcon url={igURL} style={{ height: 35, width: 35 }} bgColor="#0025db" />
-        </div>
+          <SocialIcon
+            url={igURL}
+            style={{ height: 35, width: 35 }}
+            bgColor="#0025db"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          />
         )}
       </div>
       <div className="flex flex-col w-[85%] lg:w-[70%] justify-center items-center mx-auto my-2 gap-6">

@@ -41,22 +41,24 @@ const Home = () => {
             id, name, image, igURL,
           }) => (
             <div key={id} className="max-w-md mx-auto lg:col-span-3 p-12 lg:p-4">
-              <Link to={`/artists/${id}`} className="block">
-                <div className="flex justify-around">
+              <div className="flex justify-around">
+                <Link to={`/artists/${id}`} className="block">
                   <h3 className="text-center text-xl font-bold">
                     {name}
                   </h3>
-                  {igURL && (
-                  <div
-                    href={igURL}
+                </Link>
+                {igURL && (
+                  <SocialIcon
+                    url={igURL}
+                    style={{ height: 35, width: 35 }}
+                    bgColor="#0025db"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                  >
-                    <SocialIcon url={igURL} style={{ height: 35, width: 35 }} bgColor="#0025db" />
-                  </div>
-                  )}
-                </div>
+                  />
+                )}
+              </div>
+              <Link to={`/artists/${id}`} className="block">
                 <img
                   src={image}
                   alt={name}

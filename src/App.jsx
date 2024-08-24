@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import {
   HashRouter as Router, Routes, Route,
 } from 'react-router-dom';
@@ -6,8 +7,21 @@ import Home from './components/pages/Home';
 import ArtistPage from './components/pages/ArtistPage';
 import { ArtistsProvider } from './DatabaseContext';
 
-const App = () => (
-  <>
+const App = () => {
+  useEffect(() => {
+    const handleContextMenu = (event) => {
+      if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
+  return (
     <ArtistsProvider>
       <Router>
         <Routes>
@@ -18,7 +32,7 @@ const App = () => (
         </Routes>
       </Router>
     </ArtistsProvider>
-  </>
-);
+  );
+};
 
 export default App;

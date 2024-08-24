@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 import { useArtists } from '../../DatabaseContext';
 import currentPoster from '../../assets/galway-reinterpret.jpg';
+import tribune1 from '../../assets/galway-tribune-1.png';
+import tribune2 from '../../assets/galway-tribune-2.png';
 
 const Home = () => {
   const { artists } = useArtists();
@@ -103,7 +105,29 @@ const Home = () => {
         </div>
       </div>
 
+      <p className="text-gray-700 my-4">****************************</p>
+
       <h2 className="text-center text-2xl my-10 lg:text-3xl text-[#0f99ff]">About Nova</h2>
+
+      <a
+        href="https://connachttribune.ie/capturing-galway-in-a-new-light/?fbclid=IwZXh0bgNhZW0CMTEAAR2D2IPCMzY8-Wm26xSj-OaPEAgU9WVXOgCXWfIxS04gTDabYq4Rd4Fpx9E_aem_DRHgkOxoNrDnTCBvmFzFjA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:gap-x-12">
+          <img
+            src={tribune1}
+            alt="Galway Tribune"
+            className="w-[80%] lg:w-[25%] object-contain my-8 rounded-md hover:scale-125 hover: transition-all ease-in-out"
+          />
+
+          <img
+            src={tribune2}
+            alt="Galway Tribune"
+            className="w-[80%] lg:w-[25%] object-contain my-8 rounded-md hover:scale-125 hover: transition-all ease-in-out"
+          />
+        </div>
+      </a>
     </section>
   );
 };
